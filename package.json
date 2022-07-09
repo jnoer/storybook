@@ -1,6 +1,6 @@
 {
   "name": "@jnoer/storybook",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "dist/index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
