@@ -1,6 +1,6 @@
 {
   "name": "@jnoer/storybook",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "main": "dist/index.js",
   "dependencies": {
     "@stitches/react": "^1.2.8",
