@@ -1,23 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { styled } from '../stitches.config';
+import { useTracking } from 'react-tracking';
 
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, ...props }) => {
+export const Button2 = ({ primary, ...props }) => {
+  const { trackEvent } = useTracking();
+
+  const handleToggleChecked = ({ target: { checked } }) => {
+    trackEvent({ event_name: "name", event_type: checked ? 'checked' : 'unchecked' });
+  };
+
   return (
-    styled(
     <button
       type="button"
+      onChange={handleToggleChecked}
     >
       <span>My Button</span>
-    </button>, {
-  background: 'orange'})
-  );
+    </button>);
 };
 
-Button.propTypes = {
+Button2.propTypes = {
   /**
    * Is this the principal call to action on the page?
    */
@@ -40,7 +44,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
 };
 
-Button.defaultProps = {
+Button2.defaultProps = {
   backgroundColor: null,
   primary: false,
   size: 'medium',
