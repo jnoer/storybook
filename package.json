@@ -1,6 +1,6 @@
 {
   "name": "@jnoer/storybook",
-  "version": "0.1.31",
+  "version": "0.1.32",
   "main": "dist/index.js",
   "dependencies": {
     "@stitches/react": "^1.2.8",
@@ -16,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "rs-build": "react-scripts build",
-    "build": "cross-env BABEL_ENV=production babel src -d dist",
+    "build": "cross-env BABEL_ENV=development babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
