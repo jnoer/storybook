@@ -1,48 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { styled } from '../stitches.config';
+import { styled } from '@stitches/react';
 
-/**
- * Primary UI component for user interaction
- */
+const StyledButton = styled('button', {
+  backgroundColor: 'orange',
+  borderRadius: '9999px',
+  fontSize: '13px',
+  padding: '10px 15px',
+  '&:hover': {
+    backgroundColor: 'hotpink',
+  },
+});
+
 export const Button = ({ primary, ...props }) => {
   return (
-    styled(
-    <button
-      type="button"
-    >
-      <span>My Button</span>
-    </button>, {
-  background: 'orange'})
-  );
-};
-
-Button.propTypes = {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary: PropTypes.bool,
-  /**
-   * What background color to use
-   */
-  backgroundColor: PropTypes.string,
-  /**
-   * How large should the button be?
-   */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  /**
-   * Button contents
-   */
-  label: PropTypes.string.isRequired,
-  /**
-   * Optional click handler
-   */
-  onClick: PropTypes.func,
-};
-
-Button.defaultProps = {
-  backgroundColor: null,
-  primary: false,
-  size: 'medium',
-  onClick: undefined,
+      <StyledButton type="button">
+        <span>My Button</span>
+      </StyledButton>);
 };
